@@ -547,21 +547,4 @@ function twentythirteen_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'twentythirteen_customize_preview_js' );
 
-/**
- * Remove WordPress Topleft Corner Logo
- */
-add_action( 'admin_bar_menu', 'remove_wp_logo', 999 );
 
-function remove_wp_logo( $wp_admin_bar ) {
-	$wp_admin_bar->remove_node( 'wp-logo' );
-}
-
-
-/**
- * Remove Comments Section from all Pages
- */
-add_action( 'init', 'cakifo_child_theme_disable_comments' );
-
-function cakifo_child_theme_disable_comments() {
-	remove_post_type_support( 'page', 'comments' );
-}
